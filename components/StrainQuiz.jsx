@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const EFFECTS_OPTIONS = [
-  'Relaxed', 'Happy', 'Energetic', 'Creative', 'Focused',
-  'Sleepy', 'Uplifted', 'Calm', 'Euphoric', 'Pain Relief'
+  'Relaxing', 'Uplifting', 'Creative', 'Energizing', 'Sleep-focused',
+  'Calming', 'Balanced', 'Focus', 'Social', 'Stress-relief'
 ];
 
 const POTENCY_LEVELS = [
