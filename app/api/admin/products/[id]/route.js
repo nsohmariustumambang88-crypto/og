@@ -1,6 +1,8 @@
 import { eq } from "drizzle-orm";
 import { getSession } from "@/lib/auth";
 import { db, schema } from "@/db/client";
+import { resolveProductImage } from "@/lib/images";
+import manifest from "@/public/products/manifest.json";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +19,12 @@ export async function GET(_request, { params }) {
 
   const [p] = await db.select().from(schema.products).where(eq(schema.products.id, productId)).limit(1);
   if (!p) return Response.json({ error: "Not found." }, { status: 404 });
+
+  const [cat] = await db.select({ slug: schema.categories.slug }).from(schema.categories)
+    .where(eq(schema.categories.id, p.categoryId)).limit(1);
+  const categorySlug = cat?.slug ?? "";
+
+  const photo = resolveProductImage(p, "card");
 
   return Response.json({
     id: p.id,
@@ -42,5 +50,10 @@ export async function GET(_request, { params }) {
     tags: list(p.tags),
     imageAvif: p.imageAvif ?? "",
     imageWebp: p.imageWebp ?? "",
+    photo: {
+      url: photo?.src ?? null,
+      source: photo?.source ?? null,
+    },
+    library: (manifest[categorySlug] ?? []).map((i) => ({ avif: i.avif, webp: i.webp, label: i.slug })),
   });
 }

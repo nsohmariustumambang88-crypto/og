@@ -7,6 +7,7 @@ import { db, schema } from "@/db/client";
 import { authenticate, createSession, destroySession, getSession } from "@/lib/auth";
 import { audit, auditDestructive } from "@/lib/audit";
 import { notifyPaymentConfirmed, notifyNewReview } from "@/lib/notify";
+import manifest from "@/public/products/manifest.json";
 
 const { products, categories, subcategories, brands, shops, customers, customerNotes, orders } = schema;
 
@@ -139,6 +140,44 @@ export async function updateProduct(_prev, formData) {
   if (row?.slug) revalidatePath(`/product/${row.slug}`);
   if (row?.category) revalidatePath(`/products/${row.category}`);
   return { ok: true, message: "Product updated." };
+}
+
+export async function setProductPhoto(_prev, formData) {
+  await requireSession();
+  const id = num(formData, "id");
+  if (!id) return { errors: ["Missing product id."] };
+
+  const mode = str(formData, "mode");
+  let set;
+  if (mode === "cloud") {
+    const publicId = str(formData, "publicId");
+    if (!/^[\w\-/]{3,200}$/.test(publicId)) return { errors: ["The upload did not return a valid image."] };
+    set = { imageCloudId: publicId, imageAvif: null, imageWebp: null };
+  } else if (mode === "library") {
+    const avif = str(formData, "avif");
+    const known = Object.values(manifest).flat().find((i) => i.avif === avif);
+    if (!known) return { errors: ["That photo is not in the library."] };
+    set = { imageCloudId: null, imageAvif: known.avif, imageWebp: known.webp };
+  } else if (mode === "none") {
+    set = { imageCloudId: null, imageAvif: null, imageWebp: null };
+  } else {
+    return { errors: ["Unknown photo action."] };
+  }
+
+  await db.update(products).set(set).where(eq(products.id, id));
+
+  const [row] = await db.select({ slug: products.slug, category: categories.slug })
+    .from(products)
+    .innerJoin(categories, eq(products.categoryId, categories.id))
+    .where(eq(products.id, id)).limit(1);
+
+  revalidatePath("/admin/products");
+  revalidatePath(`/admin/products/${id}`);
+  revalidatePath("/");
+  revalidatePath("/products");
+  if (row?.slug) revalidatePath(`/product/${row.slug}`);
+  if (row?.category) revalidatePath(`/products/${row.category}`);
+  return { ok: true, message: "Photo updated." };
 }
 
 export async function deleteProduct(formData) {
