@@ -8,6 +8,7 @@ import ProductGrid from "@/components/ProductGrid";
 import AddToCart from "@/components/AddToCart";
 import Icon from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
+import AdminEditButton from "@/components/AdminEditButton";
 import Reviews from "@/components/Reviews";
 import { productSchema, breadcrumbSchema, canonical, absolute } from "@/lib/seo";
 import { resolveProductImage } from "@/lib/images";
@@ -86,6 +87,7 @@ export default async function ProductPage({ params }) {
   return (
     <>
       <JsonLd data={[productSchema(p, { imageUrl, rating: genuineRating }), breadcrumbSchema(trail)]} />
+      <AdminEditButton productId={p.id} />
 
       <div className="u-shell pt-[clamp(1.5rem,3vw,2.5rem)]">
         <Breadcrumb
