@@ -1,5 +1,6 @@
 import LandingPage from '@/components/LandingPage';
 import { canonical } from '@/lib/seo';
+import { searchProducts } from '@/db/queries';
 
 export const revalidate = 3600;
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 };
 
 export default async function IceCreamCakePage() {
-  const products = [];
+  const products = await searchProducts('Ice Cream Cake', 6);
 
   const title = 'Ice Cream Cake Strain';
   const subtitle = 'Potent indica for deep sleep and intensive pain management';

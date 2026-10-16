@@ -6,8 +6,28 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
 import { canonical, absolute, breadcrumbSchema, SITE_NAME } from "@/lib/seo";
+import { getProductsByCategory } from "@/db/queries";
 
 const find = (slug) => learn.reads.find((r) => r.slug === slug);
+
+const SHOP_CATEGORY = {
+  "thc-percentage-is-a-bad-way-to-pick-flower": "flower",
+  "how-to-read-a-certificate-of-analysis": "flower",
+  "edibles-start-at-2-5mg-and-wait": "edibles",
+  "what-actually-happens-after-you-hit-order": "flower",
+  "cannabis-drug-interactions-what-you-must-know": "wellness",
+  "thc-cbd-ratios-explained-best-doses-for-beginners": "wellness",
+  "indica-vs-sativa-vs-hybrid-effects-when-to-choose-each": "flower",
+  "cannabis-terpenes-guide-effects-limonene-myrcene-pinene": "flower",
+  "best-indica-strains-for-sleep": "flower",
+  "cannabis-for-beginners-first-purchase": "edibles",
+  "live-resin-vs-distillate-complete-comparison": "concentrates",
+  "best-cannabis-deals-this-week": "edibles",
+  "cannabis-deals-near-me": "flower",
+  "concentrate-deals-guide": "concentrates",
+  "edibles-deals-guide": "edibles",
+  "complete-cannabis-deals-guide": "flower",
+};
 
 export function generateStaticParams() {
   return learn.reads.map((r) => ({ slug: r.slug }));
@@ -42,6 +62,8 @@ export default async function Article({ params }) {
   ];
 
   const others = learn.reads.filter((r) => r.slug !== slug);
+  const shopCategory = SHOP_CATEGORY[slug] ?? "flower";
+  const shopProducts = await getProductsByCategory(shopCategory, 6);
 
   /* Article schema without a datePublished or an author: this is explainer copy
      written for the site, not a bylined piece with a publication date, and
@@ -87,6 +109,25 @@ export default async function Article({ params }) {
             </Reveal>
           ))}
         </div>
+
+        {shopProducts.length > 0 && (
+          <section className="mt-14 max-w-[62ch]">
+            <h2 className="u-heading text-[clamp(1.25rem,2.2vw,1.6rem)]">Shop these</h2>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {shopProducts.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/product/${p.slug}`} className="block rounded-sm border border-rule px-4 py-3 hover:border-ink">
+                    <span className="block text-[0.95rem] font-semibold text-ink">{p.name}</span>
+                    <span className="u-meta block text-mute">{p.brand} · {p.weight}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href={`/products/${shopCategory}`} className="u-meta mt-4 inline-block text-ink underline underline-offset-4">
+              See all {shopCategory.replace("-", " ")} →
+            </Link>
+          </section>
+        )}
 
         <aside className="mt-14 flex items-start gap-3 border-t border-rule pt-6 max-w-[62ch]">
           <Icon name="shield" size={22} className="mt-0.5 shrink-0 text-green-text" />

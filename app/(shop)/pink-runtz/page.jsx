@@ -1,5 +1,6 @@
 import LandingPage from '@/components/LandingPage';
 import { canonical } from '@/lib/seo';
+import { searchProducts } from '@/db/queries';
 
 export const revalidate = 3600;
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 };
 
 export default async function PinkRuntzPage() {
-  const products = [];
+  const products = await searchProducts('Runtz', 6);
 
   const title = 'Pink Runtz Strain';
   const subtitle = 'Sweet, fruity indica hybrid for evening relaxation and sleep';

@@ -1,5 +1,6 @@
 import LandingPage from '@/components/LandingPage';
 import { canonical } from '@/lib/seo';
+import { searchProducts } from '@/db/queries';
 
 export const revalidate = 3600;
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 };
 
 export default async function AppleFritterPage() {
-  const products = [];
+  const products = await searchProducts('Apple Fritter', 6);
 
   const title = 'Apple Fritter Strain';
   const subtitle = 'Sweet, fruity indica for relaxation, sleep, and pain relief';
