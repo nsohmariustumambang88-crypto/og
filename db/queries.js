@@ -433,6 +433,7 @@ export async function getProduct(slug) {
     shopReviews: shops.reviewCount,
     shopWindow: shops.windowLabel,
     shopLicense: shops.license,
+    shopFeeCents: shops.deliveryFeeCents,
   })).where(eq(products.slug, slug)).limit(1);
   if (!row) return null;
   return {
@@ -445,6 +446,7 @@ export async function getProduct(slug) {
     shopReviews: row.shopReviews,
     shopWindow: row.shopWindow,
     shopLicense: row.shopLicense,
+    shopFeeCents: row.shopFeeCents,
   };
 }
 

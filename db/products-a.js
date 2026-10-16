@@ -1,7 +1,7 @@
 /* [brand, name, subcategory, strainType, weight, thc, cbd, price, was|null, colorway, tags] */
 
 export const FLOWER = [
-  ["Connected Cannabis Co.", "Biscotti", "Whole bud", "Hybrid", "3.5g", 28.4, 0.1, 42, null, "ink", ["Top shelf"]],
+  ["Connected Cannabis Co.", "Biscotti", "Whole bud", "Hybrid", "3.5g", 28.4, 0.1, 28, null, "ink", ["Top shelf"]],
   ["Alien Labs", "Area 41", "Whole bud", "Hybrid", "3.5g", 31.2, 0.0, 55, null, "purple", ["New drop"]],
   ["Glass House Farms", "Lemon Cherry Gelato", "Whole bud", "Indica", "3.5g", 24.7, 0.2, 28, 35, "orange", ["Deal"]],
   ["710 Labs", "Pineapple #7", "Whole bud", "Sativa", "3.5g", 26.9, 0.1, 65, null, "green", ["Small batch"]],
@@ -10,7 +10,7 @@ export const FLOWER = [
   ["Claybourne", "Papaya Punch", "Whole bud", "Hybrid", "3.5g", 25.3, 0.1, 38, null, "orange", []],
   ["Almora Farm", "Gushers", "Whole bud", "Hybrid", "14g", 21.6, 0.2, 60, 75, "purple", ["Deal"]],
   ["Jungle Boys", "Zoap", "Whole bud", "Hybrid", "3.5g", 30.1, 0.0, 60, null, "green", ["Top shelf"]],
-  ["Fig Farms", "Animal Face", "Whole bud", "Hybrid", "3.5g", 29.4, 0.1, 58, null, "linen", ["Small batch"]],
+  ["Fig Farms", "Animal Face", "Whole bud", "Hybrid", "3.5g", 29.4, 0.1, 49, null, "linen", ["Small batch"]],
   ["Wonderbrett", "Orange Banana", "Whole bud", "Sativa", "3.5g", 27.8, 0.1, 55, null, "ink", []],
   ["Sherbinskis", "Sunset Sherbet", "Whole bud", "Hybrid", "3.5g", 24.2, 0.2, 45, null, "purple", []],
   ["Cookies", "Gary Payton", "Whole bud", "Hybrid", "3.5g", 28.9, 0.0, 50, null, "orange", ["Bestseller"]],
