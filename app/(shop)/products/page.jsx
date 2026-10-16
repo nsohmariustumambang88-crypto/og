@@ -16,8 +16,8 @@ export async function generateMetadata({ searchParams }) {
   return {
     alternates: canonicalPage("/products", page),
     title: page > 1
-      ? `Shop every category — page ${page} — Weedmaps`
-      : "Shop every category — Weedmaps",
+      ? `Shop every category — page ${page} — weedmap.store`
+      : "Shop every category — weedmap.store",
     description:
       "Every cannabis product delivering to you right now, across all nine categories.",
   };

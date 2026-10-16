@@ -3,7 +3,7 @@ import { canonical } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const metadata = {
-  title: 'Cannabis for Anxiety - Best Strains & Products | Weedmaps',
+  title: 'Cannabis for Anxiety - Best Strains & Products | weedmap.store',
   description: 'Discover cannabis products for anxiety relief. Explore calming strains with balanced cannabinoid profiles and terpenes known to reduce stress.',
   alternates: canonical('/cannabis-for-anxiety'),
 };

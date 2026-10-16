@@ -9,7 +9,7 @@ import ClearCartOnMount from "@/components/ClearCartOnMount";
 import Icon from "@/components/Icons";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Order placed — Weedmaps", robots: { index: false, follow: false } };
+export const metadata = { title: "Order placed — weedmap.store", robots: { index: false, follow: false } };
 
 const { orders, orderItems, shops, customers, paymentMethods } = schema;
 const money = (c) => `$${((c ?? 0) / 100).toFixed(2)}`;

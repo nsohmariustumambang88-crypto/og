@@ -7,7 +7,7 @@ export const revalidate = 60;
 
 export const metadata = {
   alternates: canonical("/deliveries"),
-  title: "Cannabis delivery services near you — Weedmaps",
+  title: "Cannabis delivery services near you — weedmap.store",
   description: "Every licensed delivery service that reaches your address, with live arrival windows, fees and minimums.",
 };
 

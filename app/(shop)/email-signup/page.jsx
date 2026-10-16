@@ -5,7 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { canonical, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Get Email Notifications — Weedmaps",
+  title: "Get Email Notifications — weedmap.store",
   description:
     "Subscribe to Weedmaps email notifications to get weekly deals, new product arrivals, and cannabis news delivered to your inbox.",
   alternates: canonical("/email-signup"),

@@ -3,7 +3,7 @@ import { canonical } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const metadata = {
-  title: 'Best THCa Products - High Potency Cannabis | Weedmaps',
+  title: 'Best THCa Products - High Potency Cannabis | weedmap.store',
   description: 'Explore the best THCa strains and products. THCa is the raw, non-psychoactive precursor to THC that converts when heated. Find potent, lab-tested options.',
   alternates: canonical('/best-thca-products'),
 };

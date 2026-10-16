@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
   const s = await getShop(slug);
   if (!s) return {};
   return {
-    title: `${s.name} — cannabis delivery — Weedmaps`,
+    title: `${s.name} — cannabis delivery — weedmap.store`,
     description: `${s.name} delivers to ${s.area} in ${s.eta}. ${s.menuCount} items on the menu.`,
     alternates: canonical(`/delivery/${slug}`),
     openGraph: { title: s.name, url: absolute(`/delivery/${slug}`), type: "website" },

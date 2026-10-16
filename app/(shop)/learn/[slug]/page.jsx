@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   const read = find(slug);
   if (!read) return {};
   return {
-    title: `${read.title} — Weedmaps`,
+    title: `${read.title} — weedmap.store`,
     description: read.deck,
     alternates: canonical(`/learn/${slug}`),
     openGraph: {

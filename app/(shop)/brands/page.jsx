@@ -8,7 +8,7 @@ export const revalidate = 60;
 
 export const metadata = {
   alternates: canonical("/brands"),
-  title: "Cannabis brands A–Z — Weedmaps",
+  title: "Cannabis brands A–Z — weedmap.store",
   description: "Every brand carried by the delivery services that reach you.",
 };
 

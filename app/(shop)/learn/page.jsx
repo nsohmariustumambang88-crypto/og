@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import { canonical, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Learn — how delivery, dosing and lab reports actually work — Weedmaps",
+  title: "Learn — how delivery, dosing and lab reports actually work — weedmap.store",
   description:
     "Plain explanations of the things worth knowing before you order: what a certificate of analysis says, why THC percentage misleads, how to dose edibles, and what happens after checkout.",
   alternates: canonical("/learn"),

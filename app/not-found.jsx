@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Icon from "@/components/Icons";
 
-export const metadata = { title: "Not found — Weedmaps" };
+export const metadata = { title: "Not found — weedmap.store" };
 
 /* Root-level fallback for paths that match no route group at all, so it renders
    without the storefront shell. Shop routes use app/(shop)/not-found.jsx. */

@@ -4,7 +4,7 @@ import { canonical } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const metadata = {
-  title: 'Compare Products - Weedmaps',
+  title: 'Compare Products - weedmap.store',
   description: 'Compare cannabis products side-by-side to find the best options for your needs.',
   alternates: canonical('/compare'),
 };

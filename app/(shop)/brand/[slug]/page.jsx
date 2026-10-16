@@ -24,8 +24,8 @@ export async function generateMetadata({ params }) {
 
   return {
     title: stocked
-      ? `${b.name} — ${b.kind ?? "cannabis"} delivered — Weedmaps`
-      : `${b.name} — Weedmaps`,
+      ? `${b.name} — ${b.kind ?? "cannabis"} delivered — weedmap.store`
+      : `${b.name} — weedmap.store`,
     description: stocked
       ? `Every ${b.name} product delivering to you right now.`
       : `${b.name} on Weedmaps. No ${b.name} products are in stock for delivery right now.`,

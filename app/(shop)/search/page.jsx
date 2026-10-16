@@ -6,7 +6,7 @@ import SearchField from "@/components/SearchField";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Search — Weedmaps",
+  title: "Search — weedmap.store",
   // An unbounded query space: every ?q= is a permutation of the catalogue
   // rather than a page of its own. robots.txt disallows crawling it to protect
   // crawl budget; this keeps the URL itself out of the index even when it is

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
   const p = await getProduct(slug);
   if (!p) return {};
   return {
-    title: `${p.brand} ${p.name} — ${p.weight} delivered — Weedmaps`,
+    title: `${p.brand} ${p.name} — ${p.weight} delivered — weedmap.store`,
     description: p.description
       ? p.description.slice(0, 155)
       : `${p.name} by ${p.brand}. ${p.thc}% THC, ${p.weight}. Delivered by ${p.shop} in ${p.eta}.`,

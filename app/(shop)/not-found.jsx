@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Icon from "@/components/Icons";
 
-export const metadata = { title: "Not found — Weedmaps" };
+export const metadata = { title: "Not found — weedmap.store" };
 
 export default function NotFound() {
   return (

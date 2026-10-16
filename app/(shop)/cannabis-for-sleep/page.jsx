@@ -3,7 +3,7 @@ import { canonical } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const metadata = {
-  title: 'Cannabis for Sleep - Best Strains & Products | Weedmaps',
+  title: 'Cannabis for Sleep - Best Strains & Products | weedmap.store',
   description: 'Find the best cannabis products for sleep. Explore relaxing strains, edibles, and concentrates designed to help you rest better.',
   alternates: canonical('/cannabis-for-sleep'),
 };

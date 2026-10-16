@@ -18,8 +18,8 @@ export async function generateMetadata({ params, searchParams }) {
   const page = pageNumber(sp.page);
   return {
     title: page > 1
-      ? `${cat.name} delivered near you — page ${page} — Weedmaps`
-      : `${cat.name} delivered near you — Weedmaps`,
+      ? `${cat.name} delivered near you — page ${page} — weedmap.store`
+      : `${cat.name} delivered near you — weedmap.store`,
     description: cat.blurb,
     // ?sub= and ?sort= reorder the same goods; they are not separate pages.
     // ?page= is: each page holds different products.

@@ -13,7 +13,7 @@ import PageHeader from "@/components/PageHeader";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Unsubscribed — Weedmaps",
+  title: "Unsubscribed — weedmap.store",
   robots: { index: false, follow: false },
 };
 

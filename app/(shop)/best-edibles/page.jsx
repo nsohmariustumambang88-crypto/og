@@ -3,7 +3,7 @@ import { canonical } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const metadata = {
-  title: 'Best Edibles - Gummies, Chocolate & More | Weedmaps',
+  title: 'Best Edibles - Gummies, Chocolate & More | weedmap.store',
   description: 'Explore the best cannabis edibles. Find gummies, chocolate, mints, and other infused products. Learn about edible dosing and effects.',
   alternates: canonical('/best-edibles'),
 };

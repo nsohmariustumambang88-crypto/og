@@ -3,7 +3,7 @@ import { canonical } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const metadata = {
-  title: 'Beginner\'s Guide to Cannabis | Weedmaps',
+  title: 'Beginner\'s Guide to Cannabis | weedmap.store',
   description: 'New to cannabis? Learn the basics: how to consume, what effects to expect, dosing, strains, and finding the right products for you.',
   alternates: canonical('/beginner-cannabis-guide'),
 };
