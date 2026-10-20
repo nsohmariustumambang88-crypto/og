@@ -8,7 +8,7 @@ import Pager from "@/components/Pager";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icons";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export async function generateMetadata({ searchParams }) {
   const sp = await searchParams;

@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import Reviews from "@/components/Reviews";
 import { deliveryServiceSchema, breadcrumbSchema, canonical, absolute } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const dynamicParams = true;
 export async function generateStaticParams() {

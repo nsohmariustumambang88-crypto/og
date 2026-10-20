@@ -19,7 +19,7 @@ import testimonials from "@/data/testimonials.json";
 
 import { canonical } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 600;
 export const metadata = { alternates: canonical("/") };
 
 export default async function HomePage() {

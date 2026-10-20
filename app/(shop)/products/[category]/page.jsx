@@ -8,7 +8,7 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { itemListSchema, breadcrumbSchema, canonicalPage } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params, searchParams }) {
