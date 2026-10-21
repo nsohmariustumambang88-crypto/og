@@ -199,6 +199,12 @@ export const orders = pgTable("orders", {
   discountCode: varchar("discount_code", { length: 32 }),
   discountCents: integer("discount_cents").notNull().default(0),
   deliveryNotes: text("delivery_notes"),
+
+  /* NOWPayments. Filled when a crypto payment is created for the order. */
+  paymentId: varchar("payment_id", { length: 64 }),
+  payCurrency: varchar("pay_currency", { length: 16 }),
+  payAmount: numeric("pay_amount", { precision: 18, scale: 8 }),
+  payAddress: text("pay_address"),
 }, (t) => ({
   statusIdx: index("orders_status_idx").on(t.status),
   customerIdx: index("orders_customer_idx").on(t.customerId),

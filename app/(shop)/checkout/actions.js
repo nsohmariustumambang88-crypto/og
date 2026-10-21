@@ -11,6 +11,7 @@ import { revalidatePath } from "next/cache";
 import { eq, inArray, and, sql, isNotNull } from "drizzle-orm";
 import { db, schema } from "@/db/client";
 import { notifyNewOrder } from "@/lib/notify";
+import { createPayment } from "@/lib/nowpayments";
 
 const { products, shops, brands, customers, orders, orderItems, paymentMethods } = schema;
 
@@ -227,6 +228,25 @@ export async function placeOrder(_prev, formData) {
       lineValues
     );
 
+    if (method.kind === "crypto") {
+      try {
+        const payment = await createPayment({
+          priceAmount: order.totalCents / 100,
+          orderId: ref,
+          payCurrency: method.code,
+          ipnCallbackUrl: `${process.env.NEXT_PUBLIC_SITE_URL}/api/webhooks/nowpayments`,
+        });
+        await db.update(orders).set({
+          paymentId: payment.paymentId,
+          payCurrency: payment.payCurrency,
+          payAmount: payment.payAmount,
+          payAddress: payment.payAddress,
+        }).where(eq(orders.id, order.id));
+      } catch (err) {
+        console.error("nowpayments: could not start payment for", ref, err.message);
+      }
+    }
+
     created.push({ ref, orderId: order.id, share });
   }
 
@@ -248,5 +268,6 @@ export async function placeOrder(_prev, formData) {
   revalidatePath("/admin/customers");
   revalidatePath("/admin");
 
+  if (method.kind === "crypto") redirect(`/checkout/payment?order=${created[0].ref}`);
   redirect(`/checkout/${created[0].ref}${created.length > 1 ? `?also=${created.slice(1).map((c) => c.ref).join(",")}` : ""}`);
 }
