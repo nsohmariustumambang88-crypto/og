@@ -24,7 +24,7 @@ export const STATUSES = [
 ];
 
 const PAY_TONE = {
-  awaiting_payment: "is-amber", paid: "is-green", failed: "is-red", refunded: "is-grey",
+  awaiting_payment: "is-amber", payment_seen: "is-amber", paid: "is-green", failed: "is-red", expired: "is-red", refunded: "is-grey", partially_paid: "is-red", flagged: "is-red",
 };
 const BULK_ACTIONS = [
   {
@@ -36,7 +36,7 @@ const BULK_ACTIONS = [
 ];
 
 const PAY_LABEL = {
-  awaiting_payment: "Awaiting payment", paid: "Paid", failed: "Failed", refunded: "Refunded",
+  awaiting_payment: "Awaiting payment", payment_seen: "Payment seen, confirming", paid: "Paid", failed: "Failed", expired: "Expired", refunded: "Refunded", partially_paid: "Partial payment: check amount", flagged: "Flagged: check amount",
 };
 
 export default async function OrdersAdmin({ searchParams }) {
@@ -57,6 +57,7 @@ export default async function OrdersAdmin({ searchParams }) {
       placedAt: orders.placedAt,
       paymentMethod: orders.paymentMethod, paymentStatus: orders.paymentStatus,
       paymentReference: orders.paymentReference,
+      paymentId: orders.paymentId, payCurrency: orders.payCurrency, payAmount: orders.payAmount,
       paymentConfirmedBy: orders.paymentConfirmedBy,
       destination: orders.paymentDestination,
       contactEmail: orders.contactEmail, deliveryAddress: orders.deliveryAddress,
@@ -200,6 +201,11 @@ export default async function OrdersAdmin({ searchParams }) {
                   <div className="wp-help" style={{ marginTop: 4 }}>
                     {o.paymentMethod ? (methodLabel.get(o.paymentMethod) ?? o.paymentMethod) : "—"}
                   </div>
+                  {o.paymentId && (
+                    <div className="wp-help">
+                      {(o.payCurrency ?? "").toUpperCase()} {String(o.payAmount ?? "")} · NOWPayments #{o.paymentId}
+                    </div>
+                  )}
                   {o.paymentConfirmedBy && (
                     <div className="wp-help">Confirmed by {o.paymentConfirmedBy}</div>
                   )}

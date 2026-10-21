@@ -217,18 +217,9 @@ export async function placeOrder(_prev, formData) {
         .where(and(eq(products.id, l.p.id), isNotNull(products.stockQty)));
     }
 
-    await notifyNewOrder(
-      {
-        ...order,
-        customerName: name,
-        shopName: g.shopName,
-        paymentMethodLabel: method.label,
-        paymentNetwork: method.network,
-      },
-      lineValues
-    );
-
+    let paymentPageUrl = null;
     if (method.kind === "crypto") {
+      paymentPageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/checkout/payment?order=${ref}`;
       try {
         const payment = await createPayment({
           priceAmount: order.totalCents / 100,
@@ -246,6 +237,18 @@ export async function placeOrder(_prev, formData) {
         console.error("nowpayments: could not start payment for", ref, err.message);
       }
     }
+
+    await notifyNewOrder(
+      {
+        ...order,
+        customerName: name,
+        shopName: g.shopName,
+        paymentMethodLabel: method.label,
+        paymentNetwork: method.network,
+        paymentPageUrl,
+      },
+      lineValues
+    );
 
     created.push({ ref, orderId: order.id, share });
   }
@@ -268,6 +271,8 @@ export async function placeOrder(_prev, formData) {
   revalidatePath("/admin/customers");
   revalidatePath("/admin");
 
-  if (method.kind === "crypto") redirect(`/checkout/payment?order=${created[0].ref}`);
+  if (method.kind === "crypto") {
+    redirect(`/checkout/payment?order=${created[0].ref}${created.length > 1 ? `&also=${created.slice(1).map((c) => c.ref).join(",")}` : ""}`);
+  }
   redirect(`/checkout/${created[0].ref}${created.length > 1 ? `?also=${created.slice(1).map((c) => c.ref).join(",")}` : ""}`);
 }
