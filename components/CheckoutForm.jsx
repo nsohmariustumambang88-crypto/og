@@ -129,8 +129,9 @@ export default function CheckoutForm({ methods }) {
           <section className="mt-12">
             <h2 className="u-heading text-[clamp(1.3rem,2.4vw,1.75rem)]">How you want to pay</h2>
             <p className="u-prose mt-2 text-[0.9rem] leading-relaxed text-shade">
-              Every method here is arranged after the order is placed. Nothing is charged now,
-              and no payment is confirmed until a person checks the funds arrived.
+              Bitcoin and Ethereum are paid on our payment page right after you place the order.
+              Nothing is charged until you send the crypto, and your order is confirmed automatically
+              once the payment arrives on the network.
             </p>
 
             <fieldset className="mt-5">
