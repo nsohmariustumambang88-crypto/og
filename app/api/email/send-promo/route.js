@@ -27,7 +27,7 @@ export async function POST(request) {
     for (const email of subscriberEmails) {
       try {
         const result = await resend.emails.send({
-          from: "Weedmaps Offers <offers@weedmap.store>",
+          from: "weedmap.store Offers <offers@weedmap.store>",
           to: email,
           subject: `🎉 This Week's Hot Deals - ${topDeals.length} Offers Just For You`,
           react: <PromoEmail deals={topDeals} offerCount={deals.length} />,

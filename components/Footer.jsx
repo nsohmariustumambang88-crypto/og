@@ -9,7 +9,7 @@ export default function Footer({ site }) {
       <div className="u-shell py-[clamp(3rem,5vw,4.5rem)]">
         <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))_minmax(0,1.1fr)]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5" aria-label="Weedmaps home">
+            <Link href="/" className="flex items-center gap-2.5" aria-label="weedmap.store home">
               <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-linen">
                 <Icon name="pin" size={17} />
               </span>
@@ -179,7 +179,7 @@ export default function Footer({ site }) {
 
         <div className="mt-10 flex flex-col gap-5 border-t border-rule pt-7 md:flex-row md:items-start md:justify-between">
           <p className="u-prose text-[0.8rem] leading-relaxed text-shade">{site.footer.legal}</p>
-          <p className="u-label shrink-0 text-mute">© 2026 Weedmaps · Terms · Privacy</p>
+          <p className="u-label shrink-0 text-mute">© 2026 weedmap.store · Terms · Privacy</p>
         </div>
       </div>
     </footer>

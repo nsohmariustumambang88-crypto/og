@@ -7,7 +7,7 @@ import { canonical, breadcrumbSchema } from "@/lib/seo";
 export const metadata = {
   title: "Get Email Notifications — weedmap.store",
   description:
-    "Subscribe to Weedmaps email notifications to get weekly deals, new product arrivals, and cannabis news delivered to your inbox.",
+    "Subscribe to weedmap.store email notifications to get weekly deals, new product arrivals, and cannabis news delivered to your inbox.",
   alternates: canonical("/email-signup"),
 };
 

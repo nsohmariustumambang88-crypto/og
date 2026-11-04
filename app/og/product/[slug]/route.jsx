@@ -43,7 +43,7 @@ function Wordmark() {
       {/* The mark is drawn, not typed: the OG runtime ships one fallback font
           and a glyph like U+25C9 lands as tofu. Geometry always renders. */}
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: -1.4, color: INK }}>weedmaps</div>
+        <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: -1.4, color: INK }}>weedmap.store</div>
         <div style={{
           display: "flex", width: 132, height: 4, borderRadius: 2,
           background: ORANGE, marginTop: 3,

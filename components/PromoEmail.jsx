@@ -5,7 +5,7 @@ export default function PromoEmail({ deals, offerCount }) {
     <html>
       <head>
         <meta charSet="utf-8" />
-        <title>🎉 This Week's Hot Deals - Weedmaps</title>
+        <title>🎉 This Week's Hot Deals - weedmap.store</title>
       </head>
       <body style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#f5f5f5", margin: 0, padding: "20px" }}>
         <div style={{ maxWidth: "600px", margin: "0 auto", backgroundColor: "#fff", borderRadius: "8px", overflow: "hidden", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
@@ -99,7 +99,7 @@ export default function PromoEmail({ deals, offerCount }) {
           {/* Footer */}
           <div style={{ padding: "20px", backgroundColor: "#1a1a1a", color: "#fff", textAlign: "center", fontSize: "0.85rem" }}>
             <p style={{ margin: "0 0 8px 0" }}>
-              © 2026 Weedmaps. All rights reserved.
+              © 2026 weedmap.store. All rights reserved.
             </p>
             <p style={{ margin: 0, opacity: 0.8 }}>
               You're receiving this because you subscribed to our newsletter.

@@ -34,7 +34,7 @@ export function Wordmark({ height = 30, tone = "ink", className = "" }) {
       height={height}
       viewBox="0 0 250 66"
       role="img"
-      aria-label="Weedmaps"
+      aria-label="weedmap.store"
       className={className}
       focusable="false"
     >
@@ -47,7 +47,7 @@ export function Wordmark({ height = 30, tone = "ink", className = "" }) {
         letterSpacing="-2.2"
         fill={word}
       >
-        weedmaps
+        weedmap.store
       </text>
     </svg>
   );
@@ -66,7 +66,7 @@ export function Mark({ size = 32, tone = "ink", className = "" }) {
       height={size}
       viewBox="0 0 64 64"
       role="img"
-      aria-label="Weedmaps"
+      aria-label="weedmap.store"
       className={className}
       focusable="false"
     >

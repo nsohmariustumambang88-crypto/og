@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
       : `${b.name} — weedmap.store`,
     description: stocked
       ? `Every ${b.name} product delivering to you right now.`
-      : `${b.name} on Weedmaps. No ${b.name} products are in stock for delivery right now.`,
+      : `${b.name} on weedmap.store. No ${b.name} products are in stock for delivery right now.`,
     alternates: canonical(`/brand/${slug}`),
     robots: stocked ? undefined : { index: false, follow: true },
     openGraph: { title: b.name, url: absolute(`/brand/${slug}`), type: "website" },

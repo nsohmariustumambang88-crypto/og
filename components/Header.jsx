@@ -31,7 +31,7 @@ export default function Header({ site }) {
   return (
     <header className="sticky top-0 z-40 border-b border-rule bg-linen">
       <div className="u-shell flex h-[68px] items-center justify-between gap-6">
-        <Link href="/" className="flex items-center" aria-label="Weedmaps home">
+        <Link href="/" className="flex items-center" aria-label="weedmap.store home">
           <Wordmark height={30} />
         </Link>
 
@@ -115,7 +115,7 @@ export default function Header({ site }) {
       {menu && (
         <div className="fixed inset-0 z-50 flex flex-col bg-linen lg:hidden">
           <div className="u-shell flex h-[68px] shrink-0 items-center justify-between border-b border-rule">
-            <span className="u-heading text-[1.35rem]">Weedmaps</span>
+            <span className="u-heading text-[1.35rem]">weedmap.store</span>
             <button
               type="button"
               onClick={() => setMenu(false)}

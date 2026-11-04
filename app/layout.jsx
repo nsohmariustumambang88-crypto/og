@@ -26,7 +26,7 @@ export const metadata = {
   ...(process.env.GOOGLE_SITE_VERIFICATION
     ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
     : {}),
-  title: "Weedmaps — Shop the shelf, we drive",
+  title: "weedmap.store — Shop the shelf, we drive",
   description:
     "Compare cannabis products across every licensed delivery service that reaches you. Live menus, real prices, delivered.",
   icons: { icon: "/favicon.svg" },
