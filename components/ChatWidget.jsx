@@ -258,7 +258,7 @@ export default function ChatWidget() {
               <div>
                 <p className="text-[1rem] font-semibold text-ink">👋 You left something behind.</p>
                 <p className="mt-2 text-[0.9rem] leading-relaxed text-shade">
-                  Your order is waiting — pick up where you left off and complete checkout. We deliver to all fifty states.
+                  Your order is waiting — pick up where you left off and complete checkout. We deliver only where a licensed service is live for your address.
                 </p>
               </div>
               <button
