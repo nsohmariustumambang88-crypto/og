@@ -22,7 +22,7 @@ export default async function CheckoutPage() {
       <PageHeader
         trail={[{ label: "Home", href: "/" }, { label: "Checkout" }]}
         title="Checkout"
-        blurb="Order from any service you like — we sort out who delivers what, and route each item to whoever can get it to you fastest. We deliver only where a licensed service is live for your address. Pay in Bitcoin or Ethereum on the payment page right after you place the order. Your order is confirmed automatically once the payment arrives on the network."
+        blurb="Order from any service you like — we sort out who delivers what, and route each item to whoever can get it to you fastest. We deliver to all fifty states. Pay in Bitcoin or Ethereum on the payment page right after you place the order. Your order is confirmed automatically once the payment arrives on the network."
       />
       <CheckoutForm methods={methods} />
     </>
