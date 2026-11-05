@@ -5,7 +5,7 @@ import { canonical } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 import ShopList from "@/components/ShopList";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export const metadata = {
   alternates: canonical("/deliveries"),

@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/PageHeader";
 import { canonical } from "@/lib/seo";
 import { DELIVERY_CITIES, MIN_LIVE_SERVICES, shopServesCity } from "@/lib/delivery-areas";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 const money = (c) => (c == null ? "—" : `$${(c / 100).toFixed(2)}`);
 

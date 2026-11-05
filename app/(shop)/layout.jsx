@@ -13,7 +13,7 @@ import Track from "@/components/Track";
 
 // Cache layout for 5 minutes instead of force-dynamic
 // This prevents the expensive getShops() query from running on every request
-export const revalidate = 300;
+export const revalidate = 3600;
 
 export default async function ShopLayout({ children }) {
   let shops = [];

@@ -13,7 +13,7 @@ import Reviews from "@/components/Reviews";
 import { productSchema, breadcrumbSchema, canonical, absolute } from "@/lib/seo";
 import { resolveProductImage } from "@/lib/images";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 // Rendered on demand and cached, not pre-built: pre-rendering every product at
 // build time meant 152 concurrent database reads and a flaky build.

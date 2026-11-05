@@ -4,7 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import ProductGrid from "@/components/ProductGrid";
 import Icon from "@/components/Icons";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export const metadata = {
   alternates: canonical("/deals"),
