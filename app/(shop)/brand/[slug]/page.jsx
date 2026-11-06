@@ -4,7 +4,7 @@ import { getBrand, getAllSlugs } from "@/db/queries";
 import { Breadcrumb } from "@/components/PageHeader";
 import ProductGrid from "@/components/ProductGrid";
 import JsonLd from "@/components/JsonLd";
-import { itemListSchema, breadcrumbSchema, canonical, absolute } from "@/lib/seo";
+import { itemListSchema, breadcrumbSchema, canonical, absolute, BRAND_INDEX_MIN_PRODUCTS } from "@/lib/seo";
 
 export const revalidate = 86400;
 
@@ -17,10 +17,12 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const b = await getBrand(slug);
   if (!b) return {};
-  // A brand we carry but have no stock for is a real page and stays reachable,
-  // but it has nothing to rank for. Indexing it invites a thin-content judgement
-  // on the whole site, so it is kept out until the shelf is filled.
+  // A brand page is only worth indexing with a real shelf behind it. Brands
+  // with fewer than BRAND_INDEX_MIN_PRODUCTS products stay reachable and their
+  // links are followed, but they are kept out of the index: a page with one or
+  // two products reads as thin content and drags the rest of the site down.
   const stocked = b.items.length > 0;
+  const indexable = b.items.length >= BRAND_INDEX_MIN_PRODUCTS;
 
   return {
     title: stocked
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }) {
       ? `Every ${b.name} product delivering to you right now.`
       : `${b.name} on weedmap.store. No ${b.name} products are in stock for delivery right now.`,
     alternates: canonical(`/brand/${slug}`),
-    robots: stocked ? undefined : { index: false, follow: true },
+    robots: indexable ? undefined : { index: false, follow: true },
     openGraph: { title: b.name, url: absolute(`/brand/${slug}`), type: "website" },
   };
 }
