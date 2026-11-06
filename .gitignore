@@ -26,3 +26,11 @@ Thumbs.db
 # Generated admin passwords. Read it, store the password properly, delete it.
 admin-credentials.txt
 VERCEL_ENV_VARIABLES.txt
+
+.vercel
+.env*
+
+# Local Vercel import file (secrets)
+mitches.vercel
+mitchiesvars.json
+mitchiesvars*
