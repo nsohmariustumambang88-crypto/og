@@ -8,8 +8,7 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { itemListSchema, breadcrumbSchema, canonicalPage } from "@/lib/seo";
 
-export const revalidate = 86400;
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // ISR: Cache for 1 hour, removed force-dynamic to enable caching
 
 export async function generateMetadata({ params, searchParams }) {
   const { category } = await params;

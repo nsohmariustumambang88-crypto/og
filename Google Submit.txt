@@ -1,0 +1,40 @@
+GOOGLE SEARCH CONSOLE - URLS TO SUBMIT
+=======================================
+Site:  https://www.weedmap.store
+Submit each URL below via Google Search Console > URL Inspection > paste URL > Request Indexing.
+All URLs below are live on www.weedmap.store as of build 2vpes6pkr (commit 603c579).
+
+-----------------------------------------
+PRIORITY 1 - DEALS ARTICLES (proven keywords)
+-----------------------------------------
+https://www.weedmap.store/learn/best-cannabis-deals-this-week      (targets "weedmaps deals" - 318 impressions)
+https://www.weedmap.store/learn/cannabis-deals-near-me             (targets "weedmaps deals near me" - 245 impressions)
+https://www.weedmap.store/learn/concentrate-deals-guide            (targets "deals on concentrates")
+https://www.weedmap.store/learn/edibles-deals-guide                (targets "edible deals")
+https://www.weedmap.store/learn/complete-cannabis-deals-guide      (targets "weed deals" / master guide)
+
+-----------------------------------------
+PRIORITY 2 - STRAIN PAGES (high search volume)
+-----------------------------------------
+https://www.weedmap.store/ice-cream-cake                           (18,100 monthly searches, KD 12)
+https://www.weedmap.store/apple-fritter                            (14,800 monthly searches, KD 10)
+https://www.weedmap.store/pink-runtz                               (12,100 monthly searches, KD 7)
+https://www.weedmap.store/zkittlez                                 (10,000+ monthly searches, KD 8)
+
+-----------------------------------------
+PRIORITY 3 - NEW LEARN ARTICLES (sleep / beginners / terpenes)
+-----------------------------------------
+https://www.weedmap.store/learn/best-indica-strains-for-sleep
+https://www.weedmap.store/learn/cannabis-for-beginners-first-purchase
+https://www.weedmap.store/learn/live-resin-vs-distillate-complete-comparison
+
+-----------------------------------------
+SITEMAP
+-----------------------------------------
+Submit once under Sitemaps: https://www.weedmap.store/sitemap.xml
+The sitemap already lists every /learn/ article above (they come from data/learn.json).
+The four strain pages are NOT in the sitemap yet, so submit them by URL Inspection as listed above.
+
+-----------------------------------------
+TOTAL: 12 URLs (+ sitemap)
+-----------------------------------------

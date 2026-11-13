@@ -6,6 +6,8 @@ import Icon from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
 import { canonical, breadcrumbSchema } from "@/lib/seo";
 
+export const revalidate = 86400; // ISR: Cache for 24 hours (static content)
+
 export const metadata = {
   title: "Learn — how delivery, dosing and lab reports actually work — weedmap.store",
   description:

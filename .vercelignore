@@ -1,0 +1,10 @@
+.env*
+!.env.example
+VERCEL_ENV_VARIABLES.txt
+node_modules
+.next
+.git
+.claude
+.impeccable
+debug.log
+seocrawl
